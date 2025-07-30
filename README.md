@@ -1,6 +1,3 @@
-Below is the README.md file formatted in Markdown, tailored for your mindtrack project. It includes a detailed overview, installation instructions, usage details, deployment steps, contributing guidelines, and other relevant sections based on your project structure, Next.js framework, Supabase and Grok API integrations, and Vercel deployment. The content reflects the current state of your project as discussed.
-The current date and time is 10:50 PM PKT on Wednesday, July 30, 2025.
-
 MindTrack
 Welcome to MindTrack, a web application designed to help users track their mental wellness through journaling and AI-powered insights. Built with Next.js, this app integrates Supabase for authentication and data storage, the Grok API for AI analysis, and optional MongoDB for additional data management. Deployed on Vercel, MindTrack offers a user-friendly dashboard, journal entry system, and insights page to support mental health tracking.
 Table of Contents
@@ -40,21 +37,23 @@ MongoDB (Optional): If using MongoDB integration.
 Installation
 
 Clone the Repository:
-bashgit clone https://github.com/your-username/mindtrack.git
+git clone https://github.com/your-username/mindtrack.git
 cd mindtrack
 
+
 Install Dependencies:
-bashnpm install
+npm install
+
 
 Set Up Environment Variables:
 
 Create a .env.local file in the root directory.
-Add the following variables with your credentials:
-textNEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+Add the following variables with your credentials:NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 SUPABASE_KEY=your-service-role-key
 MONGODB_URI=mongodb+srv://user:password@cluster.mongodb.net/dbname?retryWrites=true&w=majority
 GROK_API_KEY=your-grok-api-key
+
 
 Replace placeholders with actual values from your Supabase dashboard and xAI console.
 
@@ -70,7 +69,8 @@ Copy the URL and anon key from the Supabase dashboard settings.
 Usage
 
 Run Locally:
-bashnpm run dev
+npm run dev
+
 
 Open http://localhost:3000 in your browser.
 Log in with a magic link, write journal entries, and view AI insights on the dashboard.
@@ -94,26 +94,21 @@ Navigate to insights or trends via the dashboard cards.
 
 
 Development
-
-Scripts:
+Scripts
 
 npm run dev: Start the development server.
 npm run build: Build the production version.
 npm run start: Start the production server.
 
-
-Code Style:
+Code Style
 
 Use Tailwind CSS for styling (configured in tailwind.config.js).
 Follow JavaScript/ES6 standards with consistent indentation.
 
-
-Adding Features:
+Adding Features
 
 Extend pages/journal.js for mood score input.
 Implement trends logic in pages/dashboard.js using Supabase queries.
-
-
 
 Deployment
 
@@ -125,9 +120,11 @@ Add environment variables to Vercel (see below).
 
 Deploy with Vercel:
 
-Install the Vercel CLI: npm install -g vercel.
-From the mindtrack/ directory, run:
-bashvercel
+Install the Vercel CLI:npm install -g vercel
+
+
+From the mindtrack/ directory, run:vercel
+
 
 Follow prompts, selecting the mindtrack/ directory as the root.
 Set environment variables in the Vercel dashboard under "Settings" > "Environment Variables".
@@ -135,8 +132,7 @@ Set environment variables in the Vercel dashboard under "Settings" > "Environmen
 
 Vercel Configuration:
 
-Ensure vercel.json is in the root:
-json{
+Ensure vercel.json is in the root:{
   "version": 2,
   "builds": [
     {
@@ -159,6 +155,7 @@ json{
   }
 }
 
+
 Add secrets in the Vercel dashboard with names matching the @ references (e.g., next_public_supabase_url).
 
 
@@ -167,44 +164,42 @@ Environment Variables
 
 
 
+Variable
+Description
+Example Value
 
 
 
+NEXT_PUBLIC_SUPABASE_URL
+Supabase project URL
+https://your-project.supabase.co
 
 
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+Supabase anon key
+Long JWT string from Supabase
 
 
+SUPABASE_KEY
+Supabase service role key
+Long JWT string from Supabase
 
 
+MONGODB_URI
+MongoDB connection string (optional)
+mongodb+srv://user:password@cluster...
 
 
+GROK_API_KEY
+Grok API key from xAI
+gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-VariableDescriptionExample ValueNEXT_PUBLIC_SUPABASE_URLSupabase project URLhttps://your-project.supabase.coNEXT_PUBLIC_SUPABASE_ANON_KEYSupabase anon keyLong JWT string from SupabaseSUPABASE_KEYSupabase service role keyLong JWT string from SupabaseMONGODB_URIMongoDB connection string (optional)mongodb+srv://user:password@cluster...GROK_API_KEYGrok API key from xAIgsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 Add these to .env.local for local development and to Vercel secrets for deployment.
 
 Project Structure
-textmindtrack/
+mindtrack/
 │
 ├── package.json                # Project dependencies and scripts
 ├── postcss.config.js           # PostCSS config for Tailwind
@@ -237,6 +232,7 @@ textmindtrack/
 │       └── mind.svg
 │
 └── ... (node_modules, etc.)
+
 API Endpoints
 
 POST /api/login: Handles magic link authentication.
@@ -254,6 +250,6 @@ License
 This project is licensed under the MIT License. See the LICENSE file for details.
 Contact
 
-Author: M Usman Anwar
-Email: muhammadusmananwar50@example.com
-GitHub: Usman3660
+Author: [Your Name]
+Email: [your.email@example.com]
+GitHub: github.com/your-username
